@@ -22,3 +22,7 @@ class LabelService:
     def void(self,label_id):
         self.db.run("UPDATE labels SET state='VOIDED' WHERE label_id=?",(label_id,))
         return True
+
+
+def label_callback_payload(label_id, package_id, state):
+    return {'label_id':label_id,'package_id':package_id,'state':state}
