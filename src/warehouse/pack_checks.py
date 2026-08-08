@@ -30,3 +30,9 @@ class PackChecks:
         self.bus.publish('warehouse.pack_verified',order_id=task['order_id'],task_id=task_id,
                          package_id=task['package_id'])
         return True
+
+
+def weight_variance_percent(measured_grams, expected_grams):
+    if expected_grams <= 0:
+        return None
+    return 100.0 * abs(measured_grams - expected_grams) / expected_grams
