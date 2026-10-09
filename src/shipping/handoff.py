@@ -16,3 +16,7 @@ class CarrierHandoff:
     def reject(self,package_id,reason='MANIFEST_REJECTED'):
         pkg=self.db.one('SELECT * FROM packages WHERE package_id=?',(package_id,))
         self.bus.publish('carrier.rejected',order_id=pkg['order_id'],package_id=package_id,reason=reason)
+
+
+def acceptance_dedupe_key(package_id, manifest_id):
+    return f'{package_id}:accept:{manifest_id}'
