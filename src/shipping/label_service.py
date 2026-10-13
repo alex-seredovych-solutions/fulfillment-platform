@@ -26,3 +26,7 @@ class LabelService:
 
 def label_callback_payload(label_id, package_id, state):
     return {'label_id':label_id,'package_id':package_id,'state':state}
+
+
+def label_manifest_reference(package_id, label_id):
+    return {'package_id':package_id,'label_id':label_id,'source':'label-service'}
