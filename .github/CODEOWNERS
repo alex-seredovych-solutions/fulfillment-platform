@@ -1,1 +1,2 @@
 * @acme-commerce/ops-code-review
+/src/shipping/label_service.py @acme-commerce/ops-label-review
