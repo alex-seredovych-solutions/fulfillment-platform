@@ -30,3 +30,7 @@ def label_callback_payload(label_id, package_id, state):
 
 def label_manifest_reference(package_id, label_id):
     return {'package_id':package_id,'label_id':label_id,'source':'label-service'}
+
+
+def superseded_label_callback(active_label_id, callback_label_id):
+    return active_label_id != callback_label_id
