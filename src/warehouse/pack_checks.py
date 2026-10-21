@@ -36,3 +36,7 @@ def weight_variance_percent(measured_grams, expected_grams):
     if expected_grams <= 0:
         return None
     return 100.0 * abs(measured_grams - expected_grams) / expected_grams
+
+
+def packing_release_metadata(task_id, package_id, verified):
+    return {'task_id':task_id,'package_id':package_id,'pack_verified':bool(verified)}
